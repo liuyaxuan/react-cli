@@ -1,0 +1,54 @@
+html > body {
+    font-size: 12px;
+    font-family: "Helvetica Neue",'PingFang SC',"Hiragino Sans GB","Microsoft YaHei",'微软雅黑','Arial',sans-serif;
+}
+
+.menuSider {
+    height: 100vh;
+    .logo-light {
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #000;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .logo-dark {
+        width: 100%;
+        height: 64px;
+        line-height: 64px;
+        font-size: 15px;
+        font-weight: bold;
+        color: #fff;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .headMenu {
+        width: calc(100% - 50px);
+        height: 100%;
+        color: #fff;
+        text-align: left;
+        float: left;
+    }
+    .userConfig {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        margin-left: 5px;
+        position: relative;
+        top: 50%;
+        margin-top: -20px;
+        float: right;
+        border: 1px solid rgb(196, 196, 196);
+        cursor: pointer;
+        line-height: 0px;
+    }
+    .leftMenu {
+        width: 100%;
+        height: calc(100% - 64px);
+    }
+}
