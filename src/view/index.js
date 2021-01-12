@@ -67,7 +67,7 @@ const Index = props => {
                 <Sider theme={USER_LAYOUT_THEME} trigger={null} collapsible collapsed={collapsed}
                      style={ menuPositon == 'left' || menuPositon == 'leftAndTop' ? { display: 'inline-block' } : { display: 'none' }}
                 >
-                    <div className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}>biubiubiubiu</div>
+                    <div className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}>标标标</div>
                     {/* 左侧菜单  */}
                     <div className="leftMenu">
                         <Button type="primary" onClick={onCollapse} style={{ width: '100%' }}>
@@ -84,7 +84,7 @@ const Index = props => {
                         <div
                             className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}
                             style={ menuPositon !== 'left' ? { display: 'inline-block', float: 'left', width: '100px' } : { display: 'none' }}
-                        >biu ..</div>
+                        >标</div>
                         {/* 当userConfigData中mode为horizontal时，将左侧导航菜单置于头部横向菜单 */}
                         <div className="headMenu" style={ menuPositon !== 'left' ? { display: 'block', width: 'calc(100% - 150px)' } : { display: 'none' }}>
                             <Userconfig.Provider value={userConfigData}>
