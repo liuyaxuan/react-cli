@@ -7,9 +7,9 @@ export default [
         code: 200,
         data: [
             {
-                name: '登录',
+                name: '组件',
                 icon: 'icon-tuichu',
-                path: "loging",
+                path: "components",
                 key: '1',
                 children: []
             },

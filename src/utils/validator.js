@@ -43,17 +43,14 @@ export const REGEXP_THRESHOLD = /^(0|([1-9]\d{0,2}))$/;
 export const REGEXP_IDCARD = /^(\d{18,18}|\d{15,15}|\d{17,17}[Xx])$/;
 
 // 转换汉字为两个字符
-export function getStringByteLength(str: string) {
-  return str ? str.replace(/[^\x00-\xff]/g, 'ci').length : 0;
-}
 
 // 去掉首尾空格
-export function setTrim(str: String) {
+export function setTrim(str) {
   return str ? str.replace(/(^\s*)|(\s*$)/g, "") : str;
 }
 
 // 去掉所有空格
-export function setAllTrim(str: String) {
+export function setAllTrim(str) {
   return str ? str.replace(/\s+/g, "") : str;
 }
 

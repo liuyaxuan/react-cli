@@ -38,7 +38,6 @@ function Navmenu(props) {
     }));
 
     /**
-     * @author liuyaxuan
      * 用户配置
      */
     useEffect(() => {
@@ -64,7 +63,7 @@ function Navmenu(props) {
             // 赋值菜单
             setMenudata(res);
             // 跳转到初始页
-            history.push('loging');
+            history.push('components');
         })
     }
     
@@ -114,7 +113,7 @@ function Navmenu(props) {
                 inlineIndent={ Inlineindent }
                 theme={ USER_CONFIG_THEME }
                 mode={ isLeftAndTop ? 'horizontal' : USER_CONFIG_MODE }
-                defaultSelectedKeys={ ['loging'] }
+                defaultSelectedKeys={ ['components'] }
                 onClick={ onHandleMenu }
             >
                 {
