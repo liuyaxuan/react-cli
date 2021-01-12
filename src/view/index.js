@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-ro
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import Navmenu from './navigation/nav-menu'
 import Login from './pages/login/index'
+import Components from './pages/components/index'
 import Overview from './pages/overview/index'
 // scss
 import './index.scss'
@@ -105,11 +106,11 @@ const Index = props => {
                             <Breadcrumb.Item>2</Breadcrumb.Item>
                         </Breadcrumb>
                         {/* 内容主体 */}
-                        <div className="site-layout-background" style={{ padding: 10, height: '100%' }}>
-                            {/* <Redirect from='' to='/loging' /> */}
+                        <div className="site-layout-background" style={{ padding: 10, height: '100%', minWidth: '220px' }}>
+                            {/* <Redirect from='' to='/Login' /> */}
                             <Switch>
-                                <Route exact path='/loging' component={Login} />
                                 <Route path='/overview' component={Overview} />
+                                <Route path='/components' component={Components} />
                             </Switch>
                         </div>
                     </Content>

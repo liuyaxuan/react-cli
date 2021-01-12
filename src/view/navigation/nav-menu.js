@@ -63,7 +63,7 @@ function Navmenu(props) {
             // 赋值菜单
             setMenudata(res);
             // 跳转到初始页
-            history.push('components');
+            history.push('overview');
         })
     }
     
@@ -86,9 +86,9 @@ function Navmenu(props) {
         }
 
         // 菜单Icon图标
-        const IconFont = createFromIconfontCN({
-            scriptUrl: '//at.alicdn.com/t/font_8d5l8fzk5b87iudi.js',
-        });
+        function iconFontRender(data) {
+            return <ExportOutlined />
+        }
 
         // 获取子级路由菜单
         function getSubMenu (data) {
@@ -99,7 +99,7 @@ function Navmenu(props) {
                             subitem.children.length !== 0 ?
                                 getSubMenu(subitem)
                             :
-                                <Item key={subitem.path} icon={<ExportOutlined />}>
+                                <Item key={subitem.path}>
                                     {subitem.name}
                                 </Item>
                         ))
@@ -113,7 +113,7 @@ function Navmenu(props) {
                 inlineIndent={ Inlineindent }
                 theme={ USER_CONFIG_THEME }
                 mode={ isLeftAndTop ? 'horizontal' : USER_CONFIG_MODE }
-                defaultSelectedKeys={ ['components'] }
+                defaultSelectedKeys={ ['overview'] }
                 onClick={ onHandleMenu }
             >
                 {
