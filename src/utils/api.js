@@ -21,13 +21,11 @@ const processor = (type='', url='', params={}) => {
  * 导航菜单的统一接口
  * type 请求类型
  * url 接口
- * getDataSize 向接口发起请求时，通过此参数设置每次请求返回的数据条数
- * isAll 是否查询全部列表数据，为true时接口返回所有，为false时分页获取数据，每次获取指定数量
+ * userCode 当前登录用户code
  */
-const getNavlist = (type, url, getDataSize, isAll) => {
+const getNavlist = (type, url, userCode) => {
     const params = {
-        userCode: '123',
-        pageSize: getDataSize
+        userCode: userCode,
     }
     return processor(type, url, params)
 }

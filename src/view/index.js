@@ -3,14 +3,15 @@ import { Layout, Breadcrumb, Badge, Avatar, Image, Button } from 'antd';
 // 菜单组件
 import { Menu } from 'antd';
 // 路由
-import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
+import Routers from '../routers/routers';
 
 // 文字图标
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
-import Navmenu from './navigation/nav-menu'
-import Login from './pages/login/index'
-import Components from './pages/components/index'
-import Overview from './pages/overview/index'
+import Navmenu from './navigation/nav-menu';
+import Login from './pages/login/index';
+import Components from './pages/components/index';
+import Overview from './pages/overview/index';
 // scss
 import './index.scss'
 
@@ -108,10 +109,11 @@ const Index = props => {
                         {/* 内容主体 */}
                         <div className="site-layout-background" style={{ padding: 10, height: '100%', minWidth: '220px' }}>
                             {/* <Redirect from='' to='/Login' /> */}
-                            <Switch>
+                            {/* <Switch>
                                 <Route path='/overview' component={Overview} />
                                 <Route path='/components' component={Components} />
-                            </Switch>
+                            </Switch> */}
+                            <Routers />
                         </div>
                     </Content>
                     <Footer style={{ textAlign: 'center' }}>2020-11-24 ***** ***** ****</Footer>
