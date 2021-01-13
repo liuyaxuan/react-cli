@@ -1,6 +1,11 @@
 // @flow
 import { useContext, useState, useImperativeHandle, useEffect} from 'react';
 import { Row, Col, Card } from 'antd';
+import { useHistory } from 'react-router-dom'
+
+// 请求
+import { getPoster } from '../../../utils/api';
+
 // scss
 import './index.scss'
 
@@ -10,8 +15,10 @@ import './index.scss'
  */
 
 const OverView = (props) => {
+  const history = useHistory();
   const [loading, setLoading] = useState(false); // 加载动画
   const [pixelWidth, setPixelWidth] = useState(1366); // 设置初始化页面宽度
+  const [cardsData, setCardsData] = useState([]);
 
   useEffect(() => {
     // 初始化页面设置容器宽，计算卡片显示行数和每行个数
@@ -20,6 +27,15 @@ const OverView = (props) => {
     window.onresize = function () {
       setPixelWidth(document.getElementsByClassName('card-box')[0].clientWidth)
     }
+
+    // 获取全部caards
+    setLoading(true);
+    getPoster('get', '/overview/cards', {pid: 123, uid:456}).then(res => {
+      setLoading(false)
+      setCardsData(res);
+    }).catch(err => {
+      setLoading(false);
+    })
   }, [])
 
   /**
@@ -35,13 +51,29 @@ const OverView = (props) => {
    * @param {*} pixel_width 
    */
   function renderCards(pixel_width) {
-    // cardsNum 表示页面中需要展示的cards总数
-    const cardsNum = 100;
+    // 点击卡片路由跳转
+    function handleJump (data) {
+      // history.push(data.path);
+    }
     return (
-      <div className="card-box" style={{ width: '100%', minWidth: '220px', height: 'calc(100% - 54px)', overflowY: 'auto' }}>
-        <Card className="cards" title="Card title 1" bordered={false} hoverable>
-          Card content 1
-        </Card>
+      <div className="card-box">
+        {
+          cardsData && cardsData.map((item, index) => (
+            <Card
+              className="cards"
+              key={ index }
+              title={item.title}
+              bordered={true}
+              hoverable
+              loading={loading}
+              size="small"
+              bodyStyle={{ fontSize: '12px' }}
+              onClick={()=> { handleJump(item) }}
+            >
+              { item.content }
+            </Card>
+          ))
+        }
       </div>
     )
   }
