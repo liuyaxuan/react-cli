@@ -101,10 +101,10 @@ const Index = props => {
                     </Header>
                     <Content style={{ margin: '0 16px' }}>
                         {/* 面包屑 */}
-                        <Breadcrumb style={{ margin: '16px 0' }}>
+                        {/* <Breadcrumb style={{ margin: '16px 0' }}>
                             <Breadcrumb.Item>1</Breadcrumb.Item>
                             <Breadcrumb.Item>2</Breadcrumb.Item>
-                        </Breadcrumb>
+                        </Breadcrumb> */}
                         {/* 内容主体 */}
                         <div className="site-layout-background" style={{ padding: 10, height: '100%', minWidth: '220px' }}>
                             {/* <Redirect from='' to='/Login' /> */}

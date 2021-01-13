@@ -42,12 +42,6 @@ const OverView = (props) => {
         <Card className="cards" title="Card title 1" bordered={false} hoverable>
           Card content 1
         </Card>
-        <Card className="cards" title="Card title 1" bordered={false} hoverable>
-          Card content 2
-        </Card>
-        <Card className="cards" title="Card title 1" bordered={false} hoverable>
-          Card content 3
-        </Card>
       </div>
     )
   }
