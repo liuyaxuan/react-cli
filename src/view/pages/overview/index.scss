@@ -1,4 +1,8 @@
 .card-box {
+    width: '100%';
+    min-width: '220px';
+    height: 'calc(100% - 54px)';
+    overflow-y: 'auto';
     margin-right: '0px';
     text-align: left;
     .cards {
@@ -7,5 +11,9 @@
         margin-left: 10px;
         margin-bottom: 10px;
         display: inline-block;
+        .ant-card-head {
+            background: rgb(24, 144, 255);
+            color: #fff;
+        }
     }
 }
