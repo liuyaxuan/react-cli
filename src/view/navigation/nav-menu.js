@@ -58,7 +58,7 @@ function Navmenu(props) {
      */
     function getMenuData(data) {
         setLoading(true);
-        getNavlist('get', '/nav/list', 1, 50).then(res => {
+        getNavlist('get', '/nav/list', 123).then(res => {
             setLoading(false);
             // 赋值菜单
             setMenudata(res);

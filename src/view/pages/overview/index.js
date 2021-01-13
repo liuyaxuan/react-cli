@@ -1,6 +1,6 @@
 // @flow
 import { useContext, useState, useImperativeHandle, useEffect} from 'react';
-import { Row, Col, Card } from 'antd';
+import { Row, Col, Card, Skeleton } from 'antd';
 import { useHistory } from 'react-router-dom'
 
 // 请求
@@ -57,23 +57,24 @@ const OverView = (props) => {
     }
     return (
       <div className="card-box">
-        {
-          cardsData && cardsData.map((item, index) => (
-            <Card
-              className="cards"
-              key={ index }
-              title={item.title}
-              bordered={true}
-              hoverable
-              loading={loading}
-              size="small"
-              bodyStyle={{ fontSize: '12px' }}
-              onClick={()=> { handleJump(item) }}
-            >
-              { item.content }
-            </Card>
-          ))
-        }
+        <Skeleton loading={loading} active>
+          {
+            cardsData && cardsData.map((item, index) => (
+              <Card
+                className="cards"
+                key={ index }
+                title={item.title}
+                bordered={true}
+                hoverable
+                size="small"
+                bodyStyle={{ fontSize: '12px' }}
+                onClick={()=> { handleJump(item) }}
+              >
+                { item.content }
+              </Card>
+            ))
+          }
+        </Skeleton>
       </div>
     )
   }
