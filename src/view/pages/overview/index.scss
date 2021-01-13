@@ -1,0 +1,11 @@
+.card-box {
+    margin-right: '0px';
+    text-align: left;
+    .cards {
+        width: calc(100% / 6);
+        min-width: 200px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        display: inline-block;
+    }
+}

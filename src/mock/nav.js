@@ -7,21 +7,21 @@ export default [
         code: 200,
         data: [
             {
-                name: '登录',
+                name: '视图',
                 icon: 'icon-tuichu',
-                path: "loging",
+                path: "overview",
                 key: '1',
                 children: []
             },
             {
                 name: '地图',
                 icon: 'icon-tuichu',
-                path: "overview",
+                path: "components",
                 key: '2',
                 children: []
             },
             {
-                name: '模板',
+                name: '组件',
                 icon: 'icon-tuichu',
                 path: "",
                 key: '3',
@@ -59,9 +59,9 @@ export default [
                 ]
             },
             {
-                name: '组件',
+                name: '关于',
                 icon: 'icon-tuichu',
-                path: "",
+                path: "about",
                 key: '4',
                 children:[]
             },

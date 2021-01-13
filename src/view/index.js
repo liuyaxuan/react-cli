@@ -9,6 +9,7 @@ import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-ro
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import Navmenu from './navigation/nav-menu'
 import Login from './pages/login/index'
+import Components from './pages/components/index'
 import Overview from './pages/overview/index'
 // scss
 import './index.scss'
@@ -67,7 +68,7 @@ const Index = props => {
                 <Sider theme={USER_LAYOUT_THEME} trigger={null} collapsible collapsed={collapsed}
                      style={ menuPositon == 'left' || menuPositon == 'leftAndTop' ? { display: 'inline-block' } : { display: 'none' }}
                 >
-                    <div className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}>biubiubiubiu</div>
+                    <div className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}>标标标</div>
                     {/* 左侧菜单  */}
                     <div className="leftMenu">
                         <Button type="primary" onClick={onCollapse} style={{ width: '100%' }}>
@@ -84,7 +85,7 @@ const Index = props => {
                         <div
                             className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}
                             style={ menuPositon !== 'left' ? { display: 'inline-block', float: 'left', width: '100px' } : { display: 'none' }}
-                        >biu ..</div>
+                        >标</div>
                         {/* 当userConfigData中mode为horizontal时，将左侧导航菜单置于头部横向菜单 */}
                         <div className="headMenu" style={ menuPositon !== 'left' ? { display: 'block', width: 'calc(100% - 150px)' } : { display: 'none' }}>
                             <Userconfig.Provider value={userConfigData}>
@@ -100,16 +101,16 @@ const Index = props => {
                     </Header>
                     <Content style={{ margin: '0 16px' }}>
                         {/* 面包屑 */}
-                        <Breadcrumb style={{ margin: '16px 0' }}>
+                        {/* <Breadcrumb style={{ margin: '16px 0' }}>
                             <Breadcrumb.Item>1</Breadcrumb.Item>
                             <Breadcrumb.Item>2</Breadcrumb.Item>
-                        </Breadcrumb>
+                        </Breadcrumb> */}
                         {/* 内容主体 */}
-                        <div className="site-layout-background" style={{ padding: 10, height: '100%' }}>
-                            {/* <Redirect from='' to='/loging' /> */}
+                        <div className="site-layout-background" style={{ padding: 10, height: '100%', minWidth: '220px' }}>
+                            {/* <Redirect from='' to='/Login' /> */}
                             <Switch>
-                                <Route exact path='/loging' component={Login} />
                                 <Route path='/overview' component={Overview} />
+                                <Route path='/components' component={Components} />
                             </Switch>
                         </div>
                     </Content>
