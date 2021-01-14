@@ -15,7 +15,6 @@ const Loginpage = (props) => {
   }, [])
 
   function jump() {
-    setIsLogin(true)
     props.handleLogin();
   }
 
