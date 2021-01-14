@@ -9,6 +9,7 @@ import { getNavlist, getPoster } from '../utils/api';
 import Index from '../view/index';
 import Components from '../view/pages/components/index';
 import Overview from '../view/pages/overview/index';
+import Unknow from '../view/pages/404/index';
 
 const routersPath = [];
 const Routers = () => {
@@ -22,6 +23,11 @@ const Routers = () => {
       title: '地图',
       path: '/components',
       component: Components
+    },
+    {
+      title: '404',
+      path: '/unknow',
+      component: Unknow
     },
   ]
 
@@ -68,15 +74,12 @@ const Routers = () => {
               key={index} 
               exact 
               path={item.path}
-              // component={item.component} 
+              // component={item.component}
               render={
                 props=>( 
                   proving(item.path) ? (<item.component {...props} />)
                     :
-                    <Redirect to={{
-                      pathname: '/404',
-                      state: { from: props.location }
-                  }} />
+                    <Redirect to="/unknow" />
                 ) 
               }
             />

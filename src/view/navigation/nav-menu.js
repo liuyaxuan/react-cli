@@ -4,7 +4,7 @@ import { getNavlist, getPoster } from '../../utils/api';
 import { Link, useHistory } from 'react-router-dom'
 
 // 文字图标
-import { createFromIconfontCN, ExportOutlined } from '@ant-design/icons';
+import { createFromIconfontCN, ExportOutlined, IeCircleFilled } from '@ant-design/icons';
 // 菜单组件
 import { Menu } from 'antd';
 
@@ -12,6 +12,7 @@ import { Menu } from 'antd';
 import './css/index.scss'
 
 import { Userconfig } from '../index';
+import { render } from '@testing-library/react';
 
 function Navmenu(props) {
     // 路由
@@ -87,7 +88,7 @@ function Navmenu(props) {
 
         // 菜单Icon图标
         function iconFontRender(data) {
-            return <ExportOutlined />
+            return (<IeCircleFilled />)
         }
 
         // 获取子级路由菜单
@@ -122,9 +123,12 @@ function Navmenu(props) {
                             item.children.length !== 0 ?
                                 getSubMenu(item)
                             :
-                                <Item key={item.path} icon={<ExportOutlined />} >
-                                    {item.name}
-                                </Item>
+                                item.path !== 'unknow' ?
+                                    <Item key={item.path} icon={iconFontRender()} >
+                                        {item.name}
+                                    </Item>
+                                :
+                                    null
                         ))
                     :
                         <div className="no-menu-data">暂无菜单</div>
