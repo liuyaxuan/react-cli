@@ -5,11 +5,10 @@ import { Menu } from 'antd';
 // 路由
 import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import Routers from '../routers/routers';
-
 // 文字图标
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
+
 import Navmenu from './navigation/nav-menu';
-import Login from './pages/login/index';
 import Components from './pages/components/index';
 import Overview from './pages/overview/index';
 // scss
@@ -67,7 +66,7 @@ const Index = props => {
         <Router>
             <Layout className="menuSider">
                 <Sider theme={USER_LAYOUT_THEME} trigger={null} collapsible collapsed={collapsed}
-                     style={ menuPositon == 'left' || menuPositon == 'leftAndTop' ? { display: 'inline-block' } : { display: 'none' }}
+                        style={ menuPositon == 'left' || menuPositon == 'leftAndTop' ? { display: 'inline-block' } : { display: 'none' }}
                 >
                     <div className={USER_LAYOUT_THEME === 'light' ? 'logo-light' : 'logo-dark'}>标标标</div>
                     {/* 左侧菜单  */}
@@ -108,11 +107,6 @@ const Index = props => {
                         </Breadcrumb> */}
                         {/* 内容主体 */}
                         <div className="site-layout-background" style={{ padding: 10, height: '100%', minWidth: '220px' }}>
-                            {/* <Redirect from='' to='/Login' /> */}
-                            {/* <Switch>
-                                <Route path='/overview' component={Overview} />
-                                <Route path='/components' component={Components} />
-                            </Switch> */}
                             <Routers />
                         </div>
                     </Content>

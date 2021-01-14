@@ -2,8 +2,11 @@
  * @flow
  */
 import { useState, useEffect} from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link, Redirect } from 'react-router-dom';
 import { getNavlist, getPoster } from '../utils/api';
+
+// 主页面
+import Index from '../view/index';
 import Components from '../view/pages/components/index';
 import Overview from '../view/pages/overview/index';
 
@@ -47,6 +50,7 @@ const Routers = () => {
    * @function {*}
    */
   function proving(url) {
+    console.log(url)
     let bool = false
     if (routersPath.indexOf(url) !== -1) {
       bool = true
