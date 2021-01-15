@@ -10,8 +10,8 @@ import { getPoster } from '../../utils/api';
  */
 
 const Loginpage = (props) => {
-
   useEffect(() => {
+    
   }, [])
 
   function jump() {
