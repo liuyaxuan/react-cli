@@ -16,7 +16,7 @@ export default [
           {
               name: '地图',
               icon: 'icon-tuichu',
-              path: "components",
+              path: "map",
               key: '2',
               children: []
           },
@@ -27,34 +27,12 @@ export default [
             key: '3',
             children:[
               {
-                name: '模板-1',
+                name: 'Table',
                 icon: 'icon-tuichu',
-                path: "",
+                path: "components",
                 key: '3-1',
                 children: [
-                  {
-                    name: '模板-1-1',
-                    icon: 'icon-tuichu',
-                    path: "",
-                    key: '3-1-1',
-                    children: [
-                      {
-                        name: '模板-1-1-1',
-                        icon: 'icon-tuichu',
-                        path: "",
-                        key: '3-1-1-1',
-                        children: []
-                      }
-                    ]
-                  }
                 ]
-              },
-              {
-                name: '模板-2',
-                icon: 'icon-tuichu',
-                path: "",
-                key: '3-2',
-                children: []
               },
             ]
           },
@@ -64,6 +42,28 @@ export default [
               path: "about",
               key: '4',
               children:[]
+          },
+          {
+            name: '模板',
+            icon: 'icon-tuichu',
+            path: "",
+            key: '3-2',
+            children: [
+              {
+                name: '模板1',
+                icon: 'icon-tuichu',
+                path: "",
+                key: '3-2-1',
+                children: [
+                  {
+                    name: '模板2',
+                    icon: 'icon-tuichu',
+                    path: "",
+                    key: '3-2-1-1',
+                    children: []
+                  }
+                ]
+              }]
           },
           {
             name: '404',

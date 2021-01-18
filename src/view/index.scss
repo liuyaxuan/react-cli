@@ -69,4 +69,10 @@ html > body {
         width: 100%;
         height: calc(100% - 64px);
     }
+    .loading-page {
+        line-height: 100px;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 400;
+    }
 }

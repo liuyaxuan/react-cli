@@ -9,8 +9,6 @@ import Routers from '../routers/routers';
 import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 
 import Navmenu from './navigation/nav-menu';
-import Components from './pages/components/index';
-import Overview from './pages/overview/index';
 // scss
 import './index.scss'
 

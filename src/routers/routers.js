@@ -7,8 +7,10 @@ import { getNavlist, getPoster } from '../utils/api';
 
 // 主页面
 import Index from '../view/index';
+import Map from '../view/pages/map/index';
 import Components from '../view/pages/components/index';
 import Overview from '../view/pages/overview/index';
+import About from '../view/pages/about/about';
 import Unknow from '../view/pages/404/index';
 
 const routersPath = [];
@@ -20,9 +22,19 @@ const Routers = () => {
       component: Overview
     },
     {
-      title: '地图',
+      title: '组件',
       path: '/components',
       component: Components
+    },
+    {
+      title: '地图',
+      path: '/map',
+      component: Map
+    },
+    {
+      title: '关于',
+      path: '/about',
+      component: About
     },
     {
       title: '404',
@@ -56,12 +68,11 @@ const Routers = () => {
    * @function {*}
    */
   function proving(url) {
-    console.log(url)
     let bool = false
-    if (routersPath.indexOf(url) !== -1) {
-      bool = true
-    } else {
-      bool = false
+    if (routersPath.length > 0) {
+      if (routersPath.indexOf(url) !== -1) {
+        bool = true
+      }
     }
     return bool;
   }
@@ -79,7 +90,8 @@ const Routers = () => {
                 props=>( 
                   proving(item.path) ? (<item.component {...props} />)
                     :
-                    <Redirect to="/unknow" />
+                    <div className="loading-page">载入中...</div>
+                    // <Redirect to="/unknow" />
                 ) 
               }
             />

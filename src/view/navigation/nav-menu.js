@@ -4,7 +4,7 @@ import { getNavlist, getPoster } from '../../utils/api';
 import { Link, useHistory } from 'react-router-dom'
 
 // 文字图标
-import { createFromIconfontCN, ExportOutlined, IeCircleFilled } from '@ant-design/icons';
+import { createFromIconfontCN, ExportOutlined, IeCircleFilled, WindowsFilled } from '@ant-design/icons';
 // 菜单组件
 import { Menu } from 'antd';
 
@@ -31,13 +31,6 @@ function Navmenu(props) {
         getMenuData(stateUserconfig)
     }, [])
 
-    useImperativeHandle(props.cRef, () => ({
-        // changeVal 就是暴露给父组件的方法
-        changeVal: (newVal) => {
-            setInlineindent(newVal)
-        }
-    }));
-
     /**
      * 用户配置
      */
@@ -53,6 +46,13 @@ function Navmenu(props) {
         }
     }, [stateUserconfig])
 
+    useImperativeHandle(props.cRef, () => ({
+        // changeVal 就是暴露给父组件的方法
+        changeVal: (newVal) => {
+            setInlineindent(newVal)
+        }
+    }));
+
     /**
      * @author liuyaxuan
      * 菜单
@@ -64,7 +64,7 @@ function Navmenu(props) {
             // 赋值菜单
             setMenudata(res);
             // 跳转到初始页
-            history.push('overview');
+            history.push('map');
         })
     }
     
@@ -86,9 +86,15 @@ function Navmenu(props) {
             history.push(data.key);
         }
 
+        function loginOut() {
+            window.location.href = 'http://localhost:3000/'
+        }
+
         // 菜单Icon图标
         function iconFontRender(data) {
-            return (<IeCircleFilled />)
+            return (
+                <WindowsFilled />
+            )
         }
 
         // 获取子级路由菜单
@@ -114,7 +120,7 @@ function Navmenu(props) {
                 inlineIndent={ Inlineindent }
                 theme={ USER_CONFIG_THEME }
                 mode={ isLeftAndTop ? 'horizontal' : USER_CONFIG_MODE }
-                defaultSelectedKeys={ ['overview'] }
+                defaultSelectedKeys={ ['map'] }
                 onClick={ onHandleMenu }
             >
                 {
@@ -124,7 +130,7 @@ function Navmenu(props) {
                                 getSubMenu(item)
                             :
                                 item.path !== 'unknow' ?
-                                    <Item key={item.path} icon={iconFontRender()} >
+                                    <Item key={item.path} icon={iconFontRender(item)} >
                                         {item.name}
                                     </Item>
                                 :
@@ -133,6 +139,7 @@ function Navmenu(props) {
                     :
                         <div className="no-menu-data">暂无菜单</div>
                 }
+                <div onClick={loginOut}>退出</div>
             </Menu>
         );
     }

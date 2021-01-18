@@ -1,4 +1,5 @@
 // @flow
+import Axios from 'axios';
 import { useState, useEffect} from 'react';
 
 // 请求
@@ -10,11 +11,13 @@ import { getPoster } from '../../utils/api';
  */
 
 const Loginpage = (props) => {
-
   useEffect(() => {
   }, [])
 
   function jump() {
+    // 登录设置
+    // Axios.then(res => {....})
+    sessionStorage.setItem("loginStatus", true);
     props.handleLogin();
   }
 
