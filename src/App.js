@@ -9,15 +9,17 @@ import Index from './view/index';
 import '../src/mock';
 
 function App() {
-  const [isLogin, setIsLogin] = useState(false);
+  const LOGING_STATUS = sessionStorage.getItem('loginStatus');
+  const [isLogin, setIsLogin] = useState(LOGING_STATUS);
 
   useEffect(() => {
+    handleLogin();
     return () => {
     }
   }, [])
 
   function handleLogin() {
-    setIsLogin(true);
+    setIsLogin(sessionStorage.getItem('loginStatus'));
   }
 
   return (
