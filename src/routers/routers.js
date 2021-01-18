@@ -68,6 +68,7 @@ const Routers = () => {
    * @function {*}
    */
   function proving(url) {
+    console.log('url -->', url)
     let bool = false
     if (routersPath.length > 0) {
       if (routersPath.indexOf(url) !== -1) {
@@ -85,7 +86,7 @@ const Routers = () => {
               key={index} 
               exact 
               path={item.path}
-              // component={item.component}
+              component={item.component}
               render={
                 props=>( 
                   proving(item.path) ? (<item.component {...props} />)

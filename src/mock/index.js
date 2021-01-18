@@ -3,11 +3,13 @@ import Mock from 'mockjs'
 import nav from './nav'
 import user_config from './user-config'
 import overview from './overview'
+import map from './map'
 
 const mocks = [
   ...user_config,
   ...nav,
-  ...overview
+  ...overview,
+  ...map
 ]
 
 /**
